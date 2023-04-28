@@ -15,7 +15,7 @@ with open("gigs.csv", "w") as f:
     for gig in gigs:
         gig_link = "https://www.fiverr.com" + gig.find('a').get('href')
         gig_title = gig.find('h3').text
-        player = gig.find('div', class_='player')
+        player = gig.find('div', class_='slide-item')
         gig_image = player.find('img').get('src') if player else ""
         seller = gig.find('div', class_='seller-info')
         pro_pic = seller.find('img').get('src')if seller else ""
